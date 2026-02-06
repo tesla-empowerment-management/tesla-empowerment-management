@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2>Get Started</h2>
+
+<p>Your Registration Code:</p>
+<h3 id="code"></h3>
+
+<input type="text" placeholder="Enter registration code">
+<br><br>
+<a href="dashboard.html" class="btn">Submit</a>
+
+<script>
+  document.getElementById("code").innerText =
+    "REG-" + Math.floor(100000 + Math.random() * 900000);
+</script>
+
+</body>
+</html>
