@@ -3,90 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard - Tesla Empowerment Management</title>
+<title>Dashboard - Tesla E.M Empowerment</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<section class="dashboard-section">
+<!-- HAMBURGER MENU -->
+<div class="hamburger">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+<nav class="side-menu">
+  <ul>
+    <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#wtd">WTD Cards</a></li>
+    <li><a href="#testimonials">Live Testimonials</a></li>
+    <li><a href="#contact">Contact Agent</a></li>
+  </ul>
+</nav>
+
+<section id="dashboard" class="dashboard-section">
   <h1>Dashboard</h1>
-
-  <div class="card">
+  <div class="balance">
     <h2>Empowerment Balance</h2>
-    <p><strong>₿ 612,450.23</strong></p>
+    <p id="balance">₿ 612,450.23</p>
   </div>
-
-  <section class="wtd-dashboard">
-    <h2>WTD Card Options & Withdrawal Authorization</h2>
-    <div class="cards">
-
-      <div class="card tier1">
-        <h3>Tier 1 – Visa</h3>
-        <p>Access Fee: $1,500</p>
-        <p>Weekly Limit: $6,000</p>
-        <p>Daily Limit: $1,000</p>
-        <p>Starter level</p>
-      </div>
-
-      <div class="card tier2">
-        <h3>Tier 2 – Visa</h3>
-        <p>Access Fee: $2,000</p>
-        <p>Weekly Limit: $10,000</p>
-        <p>Daily Limit: $2,000</p>
-        <p>Good for beginners</p>
-      </div>
-
-      <div class="card tier3">
-        <h3>Tier 3 – Visa</h3>
-        <p>Access Fee: $3,000</p>
-        <p>Weekly Limit: $18,000</p>
-        <p>Daily Limit: $3,000</p>
-        <p>Faster access</p>
-      </div>
-
-      <div class="card tier4">
-        <h3>Tier 4 – MasterCard</h3>
-        <p>Access Fee: $4,500</p>
-        <p>Weekly Limit: $25,000</p>
-        <p>Daily Limit: $4,000</p>
-        <p>Business-level</p>
-      </div>
-
-      <div class="card tier5">
-        <h3>Tier 5 – MasterCard</h3>
-        <p>Access Fee: $7,000</p>
-        <p>Weekly Limit: $35,000</p>
-        <p>Daily Limit: $5,000</p>
-        <p>High withdrawals</p>
-      </div>
-
-      <div class="card tier6">
-        <h3>Tier 6 – Platinum</h3>
-        <p>Access Fee: $10,000</p>
-        <p>Weekly Limit: $50,000</p>
-        <p>Daily Limit: No limit</p>
-        <p>Full access</p>
-      </div>
-
-    </div>
-
-    <div class="contact">
-      <h3>📩 WTD Card Access Request</h3>
-      <p>To activate a WTD authorization tier, contact our platform support agent below:</p>
-      <p><strong>Email:</strong> teammangementt@gmail.com</p>
-    </div>
-
-    <div class="withdraw-section">
-      <h3>Withdraw Funds (Demo)</h3>
-      <input type="text" placeholder="Enter BTC Address">
-      <input type="text" placeholder="Enter WTD Activation Code">
-      <button class="btn">Verify</button>
-      <p>Withdrawal demo only. No real funds sent.</p>
-    </div>
-  </section>
-
 </section>
 
+<!-- WTD Cards Section -->
+<section id="wtd" class="wtd-dashboard">
+  <h2>WTD Card Options & Withdrawal Authorization</h2>
+  <div class="cards">
+    <!-- Tiers 1-6 Cards -->
+    <div class="card tier1"><h3>Tier 1 – Visa</h3><p>Access Fee: $1,500</p><p>Weekly Limit: $6,000</p><p>Daily Limit: $1,000</p><p>Starter level</p></div>
+    <div class="card tier2"><h3>Tier 2 – Visa</h3><p>Access Fee: $2,000</p><p>Weekly Limit: $10,000</p><p>Daily Limit: $2,000</p><p>Good for beginners</p></div>
+    <div class="card tier3"><h3>Tier 3 – Visa</h3><p>Access Fee: $3,000</p><p>Weekly Limit: $18,000</p><p>Daily Limit: $3,000</p><p>Faster access</p></div>
+    <div class="card tier4"><h3>Tier 4 – MasterCard</h3><p>Access Fee: $4,500</p><p>Weekly Limit: $25,000</p><p>Daily Limit: $4,000</p><p>Business-level</p></div>
+    <div class="card tier5"><h3>Tier 5 – MasterCard</h3><p>Access Fee: $7,000</p><p>Weekly Limit: $35,000</p><p>Daily Limit: $5,000</p><p>High withdrawals</p></div>
+    <div class="card tier6"><h3>Tier 6 – Platinum</h3><p>Access Fee: $10,000</p><p>Weekly Limit: $50,000</p><p>Daily Limit: No limit</p><p>Full access</p></div>
+  </div>
+
+  <div class="contact" id="contact">
+    <h3>📩 WTD Card Access Request</h3>
+    <p>Contact our platform support agent below:</p>
+    <p><strong>Email:</strong> teammangementt@gmail.com</p>
+  </div>
+
+  <div class="withdraw-section">
+    <h3>Withdraw Funds</h3>
+    <input type="text" placeholder="Enter BTC Address">
+    <input type="text" placeholder="Enter WTD Activation Code">
+    <button class="btn">Verify</button>
+  </div>
+</section>
+
+<!-- Live Testimonials -->
+<section id="testimonials" class="testimonials">
+  <h2>Live Testimonials</h2>
+  <div id="testimonial-container"></div>
+</section>
+
+<script src="js/dashboard.js"></script>
 </body>
 </html>
