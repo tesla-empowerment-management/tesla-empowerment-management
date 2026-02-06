@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+  color: #333;
+  text-align: center;
+}
+
+.hero {
+  background: url("https://images.unsplash.com/photo-1620321023374-d1a68fbc720d") center/cover;
+  color: white;
+  padding: 80px 20px;
+}
+
+.btn {
+  background: #111;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+table {
+  width: 95%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 6px;
+}
+
+footer {
+  background: #111;
+  color: white;
+  padding: 20px;
+}
