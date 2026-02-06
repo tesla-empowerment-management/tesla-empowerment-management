@@ -1,53 +1,126 @@
+/* GENERAL STYLING */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
   background: #f4f6f8;
   color: #333;
-  text-align: center;
+  line-height: 1.6;
 }
 
+/* HERO */
 .hero {
-  background: url("https://images.unsplash.com/photo-1620321023374-d1a68fbc720d") center/cover;
-  color: white;
-  padding: 80px 20px;
+  height: 80vh;
+  background: url('https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
 .btn {
-  background: #111;
+  background: #ff6700;
   color: white;
-  padding: 12px 20px;
+  padding: 12px 25px;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 5px;
+  font-weight: 600;
+  transition: background 0.3s;
 }
 
+.btn:hover {
+  background: #e55a00;
+}
+
+/* ABOUT / HOW IT WORKS */
 section {
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
-table {
-  width: 95%;
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about p {
+  max-width: 800px;
   margin: auto;
-  border-collapse: collapse;
+  font-size: 1.1em;
 }
 
-table, th, td {
-  border: 1px solid #ccc;
+/* HOW IT WORKS STEPS */
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-th, td {
-  padding: 10px;
+.step {
+  background: white;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* WTD CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .card {
   background: white;
+  width: 250px;
   padding: 20px;
-  margin: 20px auto;
-  width: 300px;
-  border-radius: 6px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* CONTACT */
+.contact {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* FOOTER */
 footer {
   background: #111;
   color: white;
   padding: 20px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px){
+  .steps, .cards {
+    flex-direction: column;
+    align-items: center;
+  }
 }
