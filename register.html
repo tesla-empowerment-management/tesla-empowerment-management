@@ -1,24 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Register</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Tesla Empowerment Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<h2>Get Started</h2>
-
-<p>Your Registration Code:</p>
-<h3 id="code"></h3>
-
-<input type="text" placeholder="Enter registration code">
-<br><br>
-<a href="dashboard.html" class="btn">Submit</a>
+<section class="register-section">
+  <h2>Register to Get Started</h2>
+  <p>Enter your Bitcoin public address to register:</p>
+  
+  <input type="text" id="btcAddress" placeholder="Enter your Bitcoin Address">
+  <button id="generateCode" class="btn">Generate Verification Code</button>
+  
+  <div id="codeSection" style="display:none; margin-top:20px;">
+    <p>Your Registration Code:</p>
+    <h3 id="regCode"></h3>
+    <input type="text" id="inputCode" placeholder="Enter the code here">
+    <button id="submitCode" class="btn">Submit</button>
+    <p id="verifyMsg" style="color:green;"></p>
+  </div>
+</section>
 
 <script>
-  document.getElementById("code").innerText =
-    "REG-" + Math.floor(100000 + Math.random() * 900000);
+  const generateBtn = document.getElementById("generateCode");
+  const codeSection = document.getElementById("codeSection");
+  const regCode = document.getElementById("regCode");
+  const submitCode = document.getElementById("submitCode");
+  const inputCode = document.getElementById("inputCode");
+  const verifyMsg = document.getElementById("verifyMsg");
+
+  let currentCode = "";
+
+  generateBtn.addEventListener("click", () => {
+    const btc = document.getElementById("btcAddress").value.trim();
+    if(!btc){
+      alert("Please enter your Bitcoin address.");
+      return;
+    }
+    currentCode = Math.floor(100000 + Math.random() * 900000); // 6-digit code
+    regCode.innerText = currentCode;
+    codeSection.style.display = "block";
+  });
+
+  submitCode.addEventListener("click", () => {
+    if(inputCode.value.trim() === String(currentCode)){
+      verifyMsg.innerText = "Registration successful! Redirecting to dashboard...";
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 2000);
+    } else {
+      verifyMsg.style.color = "red";
+      verifyMsg.innerText = "Incorrect code. Try again.";
+    }
+  });
 </script>
 
 </body>
-</html>
+  </html>
